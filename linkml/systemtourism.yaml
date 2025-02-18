@@ -1,0 +1,537 @@
+id: https://diana-t.de/systemtourism
+name: "systemtourism"
+default_curi_maps:
+  - semweb_context
+prefixes:
+  linkml: https://w3id.org/linkml/
+  systemtourism: https://diana-t.de/systemtourism/
+imports:
+  - linkml:types
+default_range: string
+default_prefix: systemtourism
+
+classes:
+  Object:
+    name: "Object"
+    tree_root: true
+  TransportType:
+    name: "TransportType"
+    is_a: Object
+    description: a type of transport
+    mixins:
+      - CapacityHolder
+      - ReservableEntity  
+    attributes:
+      - usesRoutes:
+          name: "usesRoutes"
+          range: Route
+          description: uses routes
+  Train:
+    name: "Train"
+    is_a: TransportType
+    class_uri: https://www.datatourisme.fr/ontology/core#TouristTrain
+    description: a train
+  Bus:
+    name: "Bus"
+    is_a: TransportType
+    class_uri: https://www.datatourisme.fr/ontology/core#TouristBus
+    description: a bus
+  CableCar:
+    name: "CableCar"
+    is_a: TransportType
+    class_uri: https://www.datatourisme.fr/ontology/core#TourismCableCar
+    description: a cable car
+  Ship:
+    name: "Ship"
+    is_a: TransportType
+    description: a ship
+  Ferry:
+    name: "Ferry"
+    is_a: Ship
+    description: a ferry
+  Boat:
+    name: "Boat"
+    is_a: Ship
+    description: a boat
+  Airplane:
+    name: "Airplane"
+    is_a: TransportType
+    description: an airplane
+  Car:
+    name: "Car"
+    is_a: TransportType
+    class_uri: http://ontology.eil.utoronto.ca/icity/Vehicle/Vehicle
+    description: a car
+  Bicycle:
+    name: "Bicycle"
+    is_a: TransportType
+    description: a bicycle
+  FareSystem:
+    name: "FareSystem"
+    is_a: Object
+    description: a fare system
+  Capacity:
+    name: "Capacity"
+    class_uri: http://ontology.eil.utoronto.ca/icity/OM/Capacity
+    description: a capacity
+    mixins:
+      - FareSystemImpactAgent
+  Availability:
+    name: "Availability"
+    description: an availability
+    mixins:
+      - FareSystemImpactAgent
+  Cost:
+    name: "Cost"
+    is_a: Object
+    class_uri: http://harmonet.org/harmonise.rdfs#Cost
+    description: cost
+    attributes:
+      - hasFareSystem:
+          name: "hasFareSystem"
+          range: FareSystem
+          description: the fare system
+      - hasCurrency:
+          name: "hasCurrency"
+          range: string
+          description: the currency
+      - determinesPrice:
+          name: "determinesPrice"
+          range: Price
+          description: determines the price
+  Price:
+    name: "Price"
+    is_a: Object
+    class_uri: http://harmonet.org/harmonise.rdfs#Price
+    description: a price
+
+  Stakeholder:
+    name: "Stakeholder"
+    is_a: Object
+    description: a stakeholder
+    mixins:
+      - GeographicEntity
+    attributes:
+      - offers:
+          name: "offers"
+          range: TransportType
+          description: offers a transport type
+  Customer:
+    name: "Customer"
+    is_a: Stakeholder
+    description: a customer
+    attributes:
+      - usesTransportType:
+          name: "usesTransportType"
+          range: TransportType
+          description: uses a transport type
+      - usesProvider:
+          name: "usesProvider"
+          range: Provider
+          description: uses a provider
+  PublicAuthority:
+    name: "PublicAuthority"
+    is_a: Stakeholder
+    description: the public authority
+  Provider:
+    name: "Provider"
+    is_a: Stakeholder
+    class_uri: https://www.datatourisme.fr/ontology/core#ServiceProvider
+    description: a provider
+    attributes:
+      - servesGeography:
+          name: "servesGeography"
+          range: Geography
+          description: serves a geography
+
+  Geography:
+    name: "Geography"
+    is_a: Object
+    class_uri: http://harmonet.org/harmonise.rdfs#Location
+    description: a geography
+    attributes:
+      - hasLocation:
+          name: "hasLocation"
+          range: string
+          description: the location
+  Continent:
+    name: "Continent"
+    is_a: Geography
+    class_uri: schema:Continent
+    description: a continent
+  Country:
+    name: "Country"
+    class_uri: schema:Country
+    is_a: Geography
+    description: a country
+  State:
+    name: "State"
+    class_uri: schema:State
+    is_a: Geography
+    description: a state
+  Municipality:
+    name: "Municipality"
+    is_a: Geography
+    class_uri: http://ontology.eil.utoronto.ca/icity/TransportationSystem/Municipality
+    description: a municipality
+
+  Building:
+    name: "Building"
+    is_a: Object
+    class_uri: schema:House
+    description: a building
+    attributes:
+      - locatedInGeography:
+          name: "locatedInGeography"
+          range: Geography
+          description: located in a geography
+  RestArea:
+    name: "RestArea"
+    is_a: Building
+    description: a rest area
+  Airport:
+    name: "Airport"
+    is_a: Building
+    class_uri: https://www.datatourisme.fr/ontology/core#Airport
+    description: an airport
+  TrainStation:
+    name: "TrainStation"
+    is_a: Building
+    class_uri: https://www.datatourisme.fr/ontology/core#TrainStation
+    description: a train station
+
+
+  Route:
+    name: "Route"
+    is_a: Object
+    class_uri: https://www.datatourisme.fr/ontology/core#Tour
+    description: a route
+    attributes:
+      - hasCost:
+          name: "hasCost"
+          range: Cost
+          description: the cost
+  Rail:
+    name: "Rail"
+    is_a: Route
+    description: a rail route
+  Road:
+    name: "Road"
+    is_a: Route
+    description: a road
+  Water:
+    name: "Water"
+    is_a: Route
+    description: a water route
+  Air:
+    name: "Air"
+    is_a: Route
+    description: an air route
+
+
+  GastronomyType:
+    name: "GastronomyType"
+    is_a: Object
+    description: a type of gastronomy
+    attributes:
+      - hasProvider:
+          name: "hasProvider"
+          range: Provider
+          description: has a provider
+      - hasCustomer:
+          name: "hasCustomer"
+          range: Customer
+          description: has a customer
+      - determinesPrice:
+          name: "determinesPrice"
+          range: Price
+          description: has a price
+      - hasSpecialization:
+          name: "hasSpecialization"
+          range: Specialization
+          description: has a specialization
+      - hasOffer:
+          name: "hasOffer"
+          range: Offer
+          description: has an offer
+      - hasServiceLevel:
+          name: "hasServiceLevel"
+          range: ServiceLevel
+          description: has a service level
+      - hasForm:
+          name: "hasForm"
+          range: Form
+          description: has a form
+  Specialization:
+    name: "Specialization"
+    is_a: Object
+    description: a specialization
+  Offer:
+    name: "Offer"
+    is_a: Object
+    class_uri: https://www.datatourisme.fr/ontology/core#Offer
+    description: an offer
+  ServiceLevel:
+    name: "ServiceLevel"
+    is_a: Object
+    class_uri: http://purl.org/tio/ns#ServiceLevel
+    description: a service level
+  SelfService:
+    name: "SelfService"
+    is_a: ServiceLevel
+    description: a self-service
+  FullService:
+    name: "FullService"
+    is_a: ServiceLevel
+    description: a full service
+  Form:
+    name: "Form"
+    is_a: Object
+    description: a form
+  TakeAway:
+    name: "TakeAway"
+    is_a: Form
+    description: a take-away
+  DineIn:
+    name: "DineIn"
+    is_a: Form
+    description: a dine-in
+  Restaurant:
+    name: "Restaurant"
+    is_a: GastronomyType
+    class_uri: https://www.datatourisme.fr/ontology/core#Restaurant
+    description: a restaurant
+  Bistro:
+    name: "Bistro"
+    is_a: GastronomyType
+    class_uri: https://www.datatourisme.fr/ontology/core#BistroOrWineBar
+    description: a bistro
+  BarClub:
+    name: "BarClub"
+    is_a: GastronomyType
+    class_uri: https://www.datatourisme.fr/ontology/core#BarOrPub
+    description: a bar or club
+  SystemGastronomy:
+    name: "SystemGastronomy"
+    is_a: GastronomyType
+    description: a system gastronomy
+  Catering:
+    name: "Catering"
+    is_a: GastronomyType
+    class_uri: https://www.datatourisme.fr/ontology/core#CateringFeatureSpecification
+    description: a catering service
+  DeliveryService:
+    name: "DeliveryService"
+    is_a: GastronomyType
+    description: a delivery service
+
+
+  AccommodationType:
+    name: "AccommodationType"
+    is_a: Object
+    class_uri: https://www.datatourisme.fr/ontology/core#AccommodationProduct
+    description: a type of accommodation
+    mixins:
+      - GeographicEntity
+      - CapacityHolder
+      - ReservableEntity
+    attributes:
+      - hasProvider:
+          name: "hasProvider"
+          range: Provider
+          description: has a provider
+      - hasStayType:
+          name: "hasStayType"
+          range: StayType
+          description: has a stay type
+  VacationRental:
+    name: "VacationRental"
+    is_a: AccommodationType
+    description: a vacation rental
+  Hotel:
+    name: "Hotel"
+    is_a: AccommodationType
+    class_uri: https://www.datatourisme.fr/ontology/core#Hotel
+    description: a hotel
+  Camping:
+    name: "Camping"
+    is_a: AccommodationType
+    class_uri: https://www.datatourisme.fr/ontology/core#Camping
+    description: a camping site
+  Sharing:
+    name: "Sharing"
+    is_a: AccommodationType
+    description: a sharing offering
+  StayType:
+    name: "StayType"
+    is_a: Object
+    description: a stay type
+    attributes:
+      - hasOccasion:
+          name: "hasOccasion"
+          range: string
+          description: has an occasion
+      - hasProperty:
+          name: "hasProperty"
+          range: string
+          description: has a property
+      - hasDuration:
+          name: "hasDuration"
+          range: integer
+          description: has a duration
+
+
+  DestinationType:
+    name: "DestinationType"
+    is_a: Object
+    description: a type of destination
+  City:
+    name: "City"
+    is_a: DestinationType
+    class_uri: http://www.owl-ontologies.com/travel.owl#City
+    description: a city
+  Landscape:
+    name: "Landscape"
+    is_a: DestinationType
+    description: a landscape
+  CulturalArea:
+    name: "CulturalArea"
+    is_a: DestinationType
+    class_uri: https://www.datatourisme.fr/ontology/core#CulturalSite
+    description: a cultural area
+  SpaResort:
+    name: "SpaResort"
+    is_a: DestinationType
+    class_uri: https://www.datatourisme.fr/ontology/core#SpaResort
+    description: a spa or resort
+  Governance:
+    name: "Governance"
+    is_a: Object
+    attributes:
+      - coordinatesDestinationType:
+          name: "coordinatesDestinationType"
+          range: DestinationType
+          description: coordinates a destination type
+  VisitorManagement:
+    name: "VisitorManagement"
+    is_a: Governance
+    description: a visitor management
+  ParkingSystem:
+    name: "ParkingSystem"
+    is_a: VisitorManagement
+    description: a parking system
+  PublicTransportConnection:
+    name: "PublicTransportConnection"
+    is_a: VisitorManagement
+    description: public transport connection
+  HikingTrail:
+    name: "HikingTrail"
+    is_a: VisitorManagement
+    description: a hiking trail
+  RegionalSupport:
+    name: "RegionalSupport"
+    is_a: VisitorManagement
+    description: a regional support
+  NatureParkManagement:
+    name: "NatureParkManagement"
+    is_a: VisitorManagement
+    description: a nature park management
+
+  Activity:
+    name: "Activity"
+    is_a: Object
+    class_uri: http://ontology.eil.utoronto.ca/icity/Activity/Activity
+    description: an activity
+  Culture:
+    name: "Culture"
+    is_a: Activity
+    class_uri: https://www.datatourisme.fr/ontology/core#Culture
+    description: a cultural activity
+  Sports:
+    name: "Sports"
+    is_a: Activity
+    class_uri: https://www.datatourisme.fr/ontology/core#SportsEvent
+    description: a sports activity
+  Experience:
+    name: "Experience"
+    is_a: Activity
+    description: an experience
+  Wellness:
+    name: "Wellness"
+    is_a: Activity
+    description: a wellness activity
+  CanoeRental:
+    name: "CanoeRental"
+    is_a: Sports
+    description: a canoe rental
+  BikeRental:
+    name: "BikeRental"
+    is_a: Sports
+    description: a bike rental
+
+
+# MIXINS
+  FareSystemImpactAgent:
+    name: "FareSystemImpactAgent"
+    is_a: Object
+    abstract: true
+    description: influences fare system
+    slots:
+      - influencesFareSystem
+      - isAbstract
+  GeographicEntity:
+    name: "GeographicEntity"
+    is_a: Object
+    abstract: true
+    description: entity that has geographic information
+    slots:
+      - hasGeography
+      - isAbstract
+  CapacityHolder:
+    name: "CapacityHolder"
+    is_a: Object
+    abstract: true
+    description: entitiy that physically or logically hold capacity
+    slots:
+      - hasCapacity
+      - isAbstract
+  ReservableEntity:
+    name: "ReservableEntity"
+    is_a: Object
+    abstract: true
+    description: entity that can be reserved
+    slots:
+      - hasAvailability
+      - isAbstract
+
+
+slots:
+  influences:
+    name: "influences"
+    description: influences
+    range: Object
+  influencesFareSystem:
+    name: "influencesFareSystem"
+    is_a: influences
+    description: influences fare system
+    domain: FareSystemImpactAgent
+    range: FareSystem
+  hasGeography:
+    name: "hasGeography"
+    description: has geography
+    domain: GeographicEntity
+    range: Geography
+  hasCapacity:
+    name: "hasCapacity"
+    domain: CapacityHolder
+    range: Capacity
+    description: the capacity of the transport type
+  hasAvailability:
+    name: "hasAvailability"
+    domain: ReservableEntity
+    range: Availability
+    description: the availability of the transport type
+  isAbstract:
+    name: "isAbstract"
+    domain: Object
+    range: boolean

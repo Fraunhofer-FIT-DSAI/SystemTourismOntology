@@ -1,0 +1,945 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix systemtourism: <https://diana-t.de/systemtourism/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://diana-t.de/systemtourism.owl.ttl> a owl:Ontology ;
+    rdfs:label "systemtourism" .
+
+systemtourism:Air a owl:Class ;
+    rdfs:label "Air" ;
+    rdfs:subClassOf systemtourism:Route ;
+    skos:definition "an air route" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Airplane a owl:Class ;
+    rdfs:label "Airplane" ;
+    rdfs:subClassOf systemtourism:TransportType ;
+    skos:definition "an airplane" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Airport a owl:Class ;
+    rdfs:label "Airport" ;
+    rdfs:subClassOf systemtourism:Building ;
+    skos:definition "an airport" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#Airport> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:BarClub a owl:Class ;
+    rdfs:label "BarClub" ;
+    rdfs:subClassOf systemtourism:GastronomyType ;
+    skos:definition "a bar or club" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#BarOrPub> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Bicycle a owl:Class ;
+    rdfs:label "Bicycle" ;
+    rdfs:subClassOf systemtourism:TransportType ;
+    skos:definition "a bicycle" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:BikeRental a owl:Class ;
+    rdfs:label "BikeRental" ;
+    rdfs:subClassOf systemtourism:Sports ;
+    skos:definition "a bike rental" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Bistro a owl:Class ;
+    rdfs:label "Bistro" ;
+    rdfs:subClassOf systemtourism:GastronomyType ;
+    skos:definition "a bistro" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#BistroOrWineBar> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Boat a owl:Class ;
+    rdfs:label "Boat" ;
+    rdfs:subClassOf systemtourism:Ship ;
+    skos:definition "a boat" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Bus a owl:Class ;
+    rdfs:label "Bus" ;
+    rdfs:subClassOf systemtourism:TransportType ;
+    skos:definition "a bus" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#TouristBus> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:CableCar a owl:Class ;
+    rdfs:label "CableCar" ;
+    rdfs:subClassOf systemtourism:TransportType ;
+    skos:definition "a cable car" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#TourismCableCar> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Camping a owl:Class ;
+    rdfs:label "Camping" ;
+    rdfs:subClassOf systemtourism:AccommodationType ;
+    skos:definition "a camping site" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#Camping> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:CanoeRental a owl:Class ;
+    rdfs:label "CanoeRental" ;
+    rdfs:subClassOf systemtourism:Sports ;
+    skos:definition "a canoe rental" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Car a owl:Class ;
+    rdfs:label "Car" ;
+    rdfs:subClassOf systemtourism:TransportType ;
+    skos:definition "a car" ;
+    skos:exactMatch <http://ontology.eil.utoronto.ca/icity/Vehicle/Vehicle> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Catering a owl:Class ;
+    rdfs:label "Catering" ;
+    rdfs:subClassOf systemtourism:GastronomyType ;
+    skos:definition "a catering service" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#CateringFeatureSpecification> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:City a owl:Class ;
+    rdfs:label "City" ;
+    rdfs:subClassOf systemtourism:DestinationType ;
+    skos:definition "a city" ;
+    skos:exactMatch <http://www.owl-ontologies.com/travel.owl#City> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Continent a owl:Class ;
+    rdfs:label "Continent" ;
+    rdfs:subClassOf systemtourism:Geography ;
+    skos:definition "a continent" ;
+    skos:exactMatch schema:Continent ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Country a owl:Class ;
+    rdfs:label "Country" ;
+    rdfs:subClassOf systemtourism:Geography ;
+    skos:definition "a country" ;
+    skos:exactMatch schema:Country ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:CulturalArea a owl:Class ;
+    rdfs:label "CulturalArea" ;
+    rdfs:subClassOf systemtourism:DestinationType ;
+    skos:definition "a cultural area" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#CulturalSite> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Culture a owl:Class ;
+    rdfs:label "Culture" ;
+    rdfs:subClassOf systemtourism:Activity ;
+    skos:definition "a cultural activity" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#Culture> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:DeliveryService a owl:Class ;
+    rdfs:label "DeliveryService" ;
+    rdfs:subClassOf systemtourism:GastronomyType ;
+    skos:definition "a delivery service" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:DineIn a owl:Class ;
+    rdfs:label "DineIn" ;
+    rdfs:subClassOf systemtourism:Form ;
+    skos:definition "a dine-in" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Experience a owl:Class ;
+    rdfs:label "Experience" ;
+    rdfs:subClassOf systemtourism:Activity ;
+    skos:definition "an experience" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Ferry a owl:Class ;
+    rdfs:label "Ferry" ;
+    rdfs:subClassOf systemtourism:Ship ;
+    skos:definition "a ferry" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:FullService a owl:Class ;
+    rdfs:label "FullService" ;
+    rdfs:subClassOf systemtourism:ServiceLevel ;
+    skos:definition "a full service" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:HikingTrail a owl:Class ;
+    rdfs:label "HikingTrail" ;
+    rdfs:subClassOf systemtourism:VisitorManagement ;
+    skos:definition "a hiking trail" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Hotel a owl:Class ;
+    rdfs:label "Hotel" ;
+    rdfs:subClassOf systemtourism:AccommodationType ;
+    skos:definition "a hotel" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#Hotel> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Landscape a owl:Class ;
+    rdfs:label "Landscape" ;
+    rdfs:subClassOf systemtourism:DestinationType ;
+    skos:definition "a landscape" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Municipality a owl:Class ;
+    rdfs:label "Municipality" ;
+    rdfs:subClassOf systemtourism:Geography ;
+    skos:definition "a municipality" ;
+    skos:exactMatch <http://ontology.eil.utoronto.ca/icity/TransportationSystem/Municipality> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:NatureParkManagement a owl:Class ;
+    rdfs:label "NatureParkManagement" ;
+    rdfs:subClassOf systemtourism:VisitorManagement ;
+    skos:definition "a nature park management" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:ParkingSystem a owl:Class ;
+    rdfs:label "ParkingSystem" ;
+    rdfs:subClassOf systemtourism:VisitorManagement ;
+    skos:definition "a parking system" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:PublicAuthority a owl:Class ;
+    rdfs:label "PublicAuthority" ;
+    rdfs:subClassOf systemtourism:Stakeholder ;
+    skos:definition "the public authority" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:PublicTransportConnection a owl:Class ;
+    rdfs:label "PublicTransportConnection" ;
+    rdfs:subClassOf systemtourism:VisitorManagement ;
+    skos:definition "public transport connection" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Rail a owl:Class ;
+    rdfs:label "Rail" ;
+    rdfs:subClassOf systemtourism:Route ;
+    skos:definition "a rail route" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:RegionalSupport a owl:Class ;
+    rdfs:label "RegionalSupport" ;
+    rdfs:subClassOf systemtourism:VisitorManagement ;
+    skos:definition "a regional support" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:RestArea a owl:Class ;
+    rdfs:label "RestArea" ;
+    rdfs:subClassOf systemtourism:Building ;
+    skos:definition "a rest area" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Restaurant a owl:Class ;
+    rdfs:label "Restaurant" ;
+    rdfs:subClassOf systemtourism:GastronomyType ;
+    skos:definition "a restaurant" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#Restaurant> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Road a owl:Class ;
+    rdfs:label "Road" ;
+    rdfs:subClassOf systemtourism:Route ;
+    skos:definition "a road" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:SelfService a owl:Class ;
+    rdfs:label "SelfService" ;
+    rdfs:subClassOf systemtourism:ServiceLevel ;
+    skos:definition "a self-service" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Sharing a owl:Class ;
+    rdfs:label "Sharing" ;
+    rdfs:subClassOf systemtourism:AccommodationType ;
+    skos:definition "a sharing offering" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:SpaResort a owl:Class ;
+    rdfs:label "SpaResort" ;
+    rdfs:subClassOf systemtourism:DestinationType ;
+    skos:definition "a spa or resort" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#SpaResort> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:State a owl:Class ;
+    rdfs:label "State" ;
+    rdfs:subClassOf systemtourism:Geography ;
+    skos:definition "a state" ;
+    skos:exactMatch schema:State ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:SystemGastronomy a owl:Class ;
+    rdfs:label "SystemGastronomy" ;
+    rdfs:subClassOf systemtourism:GastronomyType ;
+    skos:definition "a system gastronomy" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:TakeAway a owl:Class ;
+    rdfs:label "TakeAway" ;
+    rdfs:subClassOf systemtourism:Form ;
+    skos:definition "a take-away" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Train a owl:Class ;
+    rdfs:label "Train" ;
+    rdfs:subClassOf systemtourism:TransportType ;
+    skos:definition "a train" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#TouristTrain> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:TrainStation a owl:Class ;
+    rdfs:label "TrainStation" ;
+    rdfs:subClassOf systemtourism:Building ;
+    skos:definition "a train station" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#TrainStation> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:VacationRental a owl:Class ;
+    rdfs:label "VacationRental" ;
+    rdfs:subClassOf systemtourism:AccommodationType ;
+    skos:definition "a vacation rental" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Water a owl:Class ;
+    rdfs:label "Water" ;
+    rdfs:subClassOf systemtourism:Route ;
+    skos:definition "a water route" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Wellness a owl:Class ;
+    rdfs:label "Wellness" ;
+    rdfs:subClassOf systemtourism:Activity ;
+    skos:definition "a wellness activity" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Cost a owl:Class ;
+    rdfs:label "Cost" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:FareSystem ;
+            owl:onProperty systemtourism:hasFareSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Price ;
+            owl:onProperty systemtourism:determinesPrice ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:determinesPrice ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasFareSystem ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:determinesPrice ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasCurrency ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty systemtourism:hasCurrency ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasFareSystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasCurrency ],
+        systemtourism:Object ;
+    skos:definition "cost" ;
+    skos:exactMatch <http://harmonet.org/harmonise.rdfs#Cost> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Customer a owl:Class ;
+    rdfs:label "Customer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:usesProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:usesProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:usesTransportType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:TransportType ;
+            owl:onProperty systemtourism:usesTransportType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:usesTransportType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Provider ;
+            owl:onProperty systemtourism:usesProvider ],
+        systemtourism:Stakeholder ;
+    skos:definition "a customer" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Governance a owl:Class ;
+    rdfs:label "Governance" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:coordinatesDestinationType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:coordinatesDestinationType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:DestinationType ;
+            owl:onProperty systemtourism:coordinatesDestinationType ],
+        systemtourism:Object ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Offer a owl:Class ;
+    rdfs:label "Offer" ;
+    rdfs:subClassOf systemtourism:Object ;
+    skos:definition "an offer" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#Offer> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Specialization a owl:Class ;
+    rdfs:label "Specialization" ;
+    rdfs:subClassOf systemtourism:Object ;
+    skos:definition "a specialization" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:StayType a owl:Class ;
+    rdfs:label "StayType" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty systemtourism:hasDuration ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasProperty ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasOccasion ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasOccasion ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasDuration ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasDuration ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty systemtourism:hasProperty ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasProperty ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty systemtourism:hasOccasion ],
+        systemtourism:Object ;
+    skos:definition "a stay type" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:influences a owl:ObjectProperty ;
+    rdfs:label "influences" ;
+    rdfs:range systemtourism:Object ;
+    skos:definition "influences" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Availability a owl:Class ;
+    rdfs:label "Availability" ;
+    rdfs:subClassOf systemtourism:FareSystemImpactAgent ;
+    skos:definition "an availability" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Capacity a owl:Class ;
+    rdfs:label "Capacity" ;
+    rdfs:subClassOf systemtourism:FareSystemImpactAgent ;
+    skos:definition "a capacity" ;
+    skos:exactMatch <http://ontology.eil.utoronto.ca/icity/OM/Capacity> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Price a owl:Class ;
+    rdfs:label "Price" ;
+    rdfs:subClassOf systemtourism:Object ;
+    skos:definition "a price" ;
+    skos:exactMatch <http://harmonet.org/harmonise.rdfs#Price> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Ship a owl:Class ;
+    rdfs:label "Ship" ;
+    rdfs:subClassOf systemtourism:TransportType ;
+    skos:definition "a ship" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Sports a owl:Class ;
+    rdfs:label "Sports" ;
+    rdfs:subClassOf systemtourism:Activity ;
+    skos:definition "a sports activity" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#SportsEvent> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Building a owl:Class ;
+    rdfs:label "Building" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Geography ;
+            owl:onProperty systemtourism:locatedInGeography ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:locatedInGeography ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:locatedInGeography ],
+        systemtourism:Object ;
+    skos:definition "a building" ;
+    skos:exactMatch schema:House ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:CapacityHolder a owl:Class ;
+    rdfs:label "CapacityHolder" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasCapacity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:isAbstract ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Capacity ;
+            owl:onProperty systemtourism:hasCapacity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:isAbstract ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty systemtourism:isAbstract ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasCapacity ],
+        systemtourism:Object ;
+    skos:definition "entitiy that physically or logically hold capacity" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:FareSystem a owl:Class ;
+    rdfs:label "FareSystem" ;
+    rdfs:subClassOf systemtourism:Object ;
+    skos:definition "a fare system" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:FareSystemImpactAgent a owl:Class ;
+    rdfs:label "FareSystemImpactAgent" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:isAbstract ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:isAbstract ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:influencesFareSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty systemtourism:isAbstract ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:influencesFareSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:FareSystem ;
+            owl:onProperty systemtourism:influencesFareSystem ],
+        systemtourism:Object ;
+    skos:definition "influences fare system" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Form a owl:Class ;
+    rdfs:label "Form" ;
+    rdfs:subClassOf systemtourism:Object ;
+    skos:definition "a form" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:GeographicEntity a owl:Class ;
+    rdfs:label "GeographicEntity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty systemtourism:isAbstract ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasGeography ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasGeography ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:isAbstract ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Geography ;
+            owl:onProperty systemtourism:hasGeography ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:isAbstract ],
+        systemtourism:Object ;
+    skos:definition "entity that has geographic information" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Provider a owl:Class ;
+    rdfs:label "Provider" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Geography ;
+            owl:onProperty systemtourism:servesGeography ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:servesGeography ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:servesGeography ],
+        systemtourism:Stakeholder ;
+    skos:definition "a provider" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#ServiceProvider> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:ReservableEntity a owl:Class ;
+    rdfs:label "ReservableEntity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty systemtourism:isAbstract ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:isAbstract ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Availability ;
+            owl:onProperty systemtourism:hasAvailability ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:isAbstract ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasAvailability ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasAvailability ],
+        systemtourism:Object ;
+    skos:definition "entity that can be reserved" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:ServiceLevel a owl:Class ;
+    rdfs:label "ServiceLevel" ;
+    rdfs:subClassOf systemtourism:Object ;
+    skos:definition "a service level" ;
+    skos:exactMatch <http://purl.org/tio/ns#ServiceLevel> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Stakeholder a owl:Class ;
+    rdfs:label "Stakeholder" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:TransportType ;
+            owl:onProperty systemtourism:offers ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:offers ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:offers ],
+        systemtourism:GeographicEntity,
+        systemtourism:Object ;
+    skos:definition "a stakeholder" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:coordinatesDestinationType a owl:ObjectProperty ;
+    rdfs:label "coordinatesDestinationType" ;
+    skos:definition "coordinates a destination type" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasAvailability a owl:ObjectProperty ;
+    rdfs:label "hasAvailability" ;
+    rdfs:domain systemtourism:ReservableEntity ;
+    rdfs:range systemtourism:Availability ;
+    skos:definition "the availability of the transport type" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasCapacity a owl:ObjectProperty ;
+    rdfs:label "hasCapacity" ;
+    rdfs:domain systemtourism:CapacityHolder ;
+    rdfs:range systemtourism:Capacity ;
+    skos:definition "the capacity of the transport type" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasCost a owl:ObjectProperty ;
+    rdfs:label "hasCost" ;
+    skos:definition "the cost" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasCurrency a owl:DatatypeProperty ;
+    rdfs:label "hasCurrency" ;
+    skos:definition "the currency" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasCustomer a owl:ObjectProperty ;
+    rdfs:label "hasCustomer" ;
+    skos:definition "has a customer" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasDuration a owl:DatatypeProperty ;
+    rdfs:label "hasDuration" ;
+    skos:definition "has a duration" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasFareSystem a owl:ObjectProperty ;
+    rdfs:label "hasFareSystem" ;
+    skos:definition "the fare system" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasForm a owl:ObjectProperty ;
+    rdfs:label "hasForm" ;
+    skos:definition "has a form" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasGeography a owl:ObjectProperty ;
+    rdfs:label "hasGeography" ;
+    rdfs:domain systemtourism:GeographicEntity ;
+    rdfs:range systemtourism:Geography ;
+    skos:definition "has geography" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasLocation a owl:DatatypeProperty ;
+    rdfs:label "hasLocation" ;
+    skos:definition "the location" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasOccasion a owl:DatatypeProperty ;
+    rdfs:label "hasOccasion" ;
+    skos:definition "has an occasion" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasOffer a owl:ObjectProperty ;
+    rdfs:label "hasOffer" ;
+    skos:definition "has an offer" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasProperty a owl:DatatypeProperty ;
+    rdfs:label "hasProperty" ;
+    skos:definition "has a property" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasServiceLevel a owl:ObjectProperty ;
+    rdfs:label "hasServiceLevel" ;
+    skos:definition "has a service level" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasSpecialization a owl:ObjectProperty ;
+    rdfs:label "hasSpecialization" ;
+    skos:definition "has a specialization" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:hasStayType a owl:ObjectProperty ;
+    rdfs:label "hasStayType" ;
+    skos:definition "has a stay type" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:influencesFareSystem a owl:ObjectProperty ;
+    rdfs:label "influencesFareSystem" ;
+    rdfs:domain systemtourism:FareSystemImpactAgent ;
+    rdfs:range systemtourism:FareSystem ;
+    rdfs:subPropertyOf systemtourism:influences ;
+    skos:definition "influences fare system" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:locatedInGeography a owl:ObjectProperty ;
+    rdfs:label "locatedInGeography" ;
+    skos:definition "located in a geography" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:offers a owl:ObjectProperty ;
+    rdfs:label "offers" ;
+    skos:definition "offers a transport type" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:servesGeography a owl:ObjectProperty ;
+    rdfs:label "servesGeography" ;
+    skos:definition "serves a geography" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:usesProvider a owl:ObjectProperty ;
+    rdfs:label "usesProvider" ;
+    skos:definition "uses a provider" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:usesRoutes a owl:ObjectProperty ;
+    rdfs:label "usesRoutes" ;
+    skos:definition "uses routes" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:usesTransportType a owl:ObjectProperty ;
+    rdfs:label "usesTransportType" ;
+    skos:definition "uses a transport type" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:AccommodationType a owl:Class ;
+    rdfs:label "AccommodationType" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Provider ;
+            owl:onProperty systemtourism:hasProvider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:StayType ;
+            owl:onProperty systemtourism:hasStayType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasStayType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasStayType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasProvider ],
+        systemtourism:CapacityHolder,
+        systemtourism:GeographicEntity,
+        systemtourism:Object,
+        systemtourism:ReservableEntity ;
+    skos:definition "a type of accommodation" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#AccommodationProduct> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Activity a owl:Class ;
+    rdfs:label "Activity" ;
+    rdfs:subClassOf systemtourism:Object ;
+    skos:definition "an activity" ;
+    skos:exactMatch <http://ontology.eil.utoronto.ca/icity/Activity/Activity> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:DestinationType a owl:Class ;
+    rdfs:label "DestinationType" ;
+    rdfs:subClassOf systemtourism:Object ;
+    skos:definition "a type of destination" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Route a owl:Class ;
+    rdfs:label "Route" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasCost ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasCost ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Cost ;
+            owl:onProperty systemtourism:hasCost ],
+        systemtourism:Object ;
+    skos:definition "a route" ;
+    skos:exactMatch <https://www.datatourisme.fr/ontology/core#Tour> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:VisitorManagement a owl:Class ;
+    rdfs:label "VisitorManagement" ;
+    rdfs:subClassOf systemtourism:Governance ;
+    skos:definition "a visitor management" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:GastronomyType a owl:Class ;
+    rdfs:label "GastronomyType" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasCustomer ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:determinesPrice ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasCustomer ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasServiceLevel ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasSpecialization ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasSpecialization ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasServiceLevel ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Offer ;
+            owl:onProperty systemtourism:hasOffer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasProvider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Provider ;
+            owl:onProperty systemtourism:hasProvider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Form ;
+            owl:onProperty systemtourism:hasForm ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:determinesPrice ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Price ;
+            owl:onProperty systemtourism:determinesPrice ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasForm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Specialization ;
+            owl:onProperty systemtourism:hasSpecialization ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Customer ;
+            owl:onProperty systemtourism:hasCustomer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasOffer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasForm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:ServiceLevel ;
+            owl:onProperty systemtourism:hasServiceLevel ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasOffer ],
+        systemtourism:Object ;
+    skos:definition "a type of gastronomy" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:determinesPrice a owl:ObjectProperty .
+
+systemtourism:hasProvider a owl:ObjectProperty .
+
+systemtourism:Geography a owl:Class ;
+    rdfs:label "Geography" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:hasLocation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:hasLocation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty systemtourism:hasLocation ],
+        systemtourism:Object ;
+    skos:definition "a geography" ;
+    skos:exactMatch <http://harmonet.org/harmonise.rdfs#Location> ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:TransportType a owl:Class ;
+    rdfs:label "TransportType" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty systemtourism:usesRoutes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom systemtourism:Route ;
+            owl:onProperty systemtourism:usesRoutes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty systemtourism:usesRoutes ],
+        systemtourism:CapacityHolder,
+        systemtourism:Object,
+        systemtourism:ReservableEntity ;
+    skos:definition "a type of transport" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:isAbstract a owl:DatatypeProperty ;
+    rdfs:label "isAbstract" ;
+    rdfs:domain systemtourism:Object ;
+    rdfs:range xsd:boolean ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
+
+systemtourism:Object a owl:Class ;
+    rdfs:label "Object" ;
+    skos:inScheme <https://diana-t.de/systemtourism> .
