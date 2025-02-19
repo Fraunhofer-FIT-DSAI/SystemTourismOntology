@@ -5,6 +5,7 @@ default_curi_maps:
 prefixes:
   linkml: https://w3id.org/linkml/
   systemtourism: https://diana-t.de/systemtourism/
+  schema: https://schema.org/
 imports:
   - linkml:types
 default_range: string
